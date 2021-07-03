@@ -1,0 +1,21 @@
+{
+  "name": "Netacad – Hide NDG modules",
+  "description": "Hides the NDG sections in the course overview page.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "admin-panel.html",
+    "default_icon": {
+      "128": "/images/icon_128.png"
+    }
+  },
+  "icons": {
+    "128": "/images/icon_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://lms.netacad.com/course/view.php*"],
+      "js": ["hide-ndg-script.js"]
+    }
+  ]
+}
