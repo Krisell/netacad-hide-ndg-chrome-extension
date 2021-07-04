@@ -1,11 +1,7 @@
-document.querySelector('#show').addEventListener('click', () => {
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.tabs.sendMessage(tabs[0].id, true)
-  })
-})
-
-document.querySelector('#hide').addEventListener('click', () => {
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.tabs.sendMessage(tabs[0].id, false)
+document.querySelectorAll('.ndg-button').forEach((button) => {
+  button.addEventListener('click', () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      chrome.tabs.sendMessage(tabs[0].id, button.dataset.ndgDisplay)
+    })
   })
 })
