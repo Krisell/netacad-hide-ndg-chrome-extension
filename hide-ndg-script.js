@@ -1,4 +1,6 @@
-const NDGModules = [...document.querySelectorAll('li.section')].filter((li) => li.ariaLabel.includes('NDG Online'))
+const NDGModules = [...document.querySelectorAll('li.section')].filter((li) =>
+  li.innerText.includes('NDG Online Lab Service'),
+)
 
 const updateNdgDisplay = (display) => NDGModules.forEach((ndg) => (ndg.style.display = display))
 
